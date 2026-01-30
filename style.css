@@ -1,6 +1,10 @@
 /* =======================
    RESET & BASE STYLES
 ======================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -16,13 +20,11 @@ body
   scroll-behavior: smooth;
 }
 body {
-
-
-  color: red;
   background: #faf9f9;
   padding-top: 100px;
 }
 h1 {
+  font-family: "Playfair Display", serif;
   font-size: 45px;
 }
 
@@ -35,7 +37,7 @@ h3 {
 }
 
 h1,h2,h4,h5{
-  font-family: "PlayFairDisplay";
+  font-family: "Playfair Display", serif;
   font-weight: 400;
   line-height: 1.2;
 }
