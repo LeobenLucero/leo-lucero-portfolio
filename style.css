@@ -269,6 +269,7 @@ body.fade-out {
 
 .intro-left h1 {
   color: white;
+    font-family: "Playfair Display", serif;
 }
 
 
@@ -378,6 +379,7 @@ padding-bottom: 10px;
   text-align: center;
 }
 .work-exp-title h1 {
+    font-family: "Playfair Display", serif;
   color: rgb(0, 0, 0);
 }
 
@@ -512,6 +514,7 @@ padding-bottom: 10px;
 }
 
 .hire-right h1 span{
+    font-family: "Playfair Display", serif;
   color: #faa206;
 }
 
@@ -659,6 +662,7 @@ display: none;
 }
 
 .footer h1{
+    font-family: "Playfair Display", serif;
   color: #fff;
 }
 

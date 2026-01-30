@@ -112,6 +112,7 @@ p {
 
 .content-mid h1{
   font-size: 60px;
+  font-family: "Playfair Display", serif;
 }
 
 .content-mid .title {
@@ -159,6 +160,7 @@ p {
 }
 
 .intro-left h1 {
+  font-family: "Playfair Display", serif;
   color: white;
 }
 
@@ -265,6 +267,7 @@ font-size: 25px;
 
 }
 .vector-title h1 {
+  font-family: "Playfair Display", serif;
   color: rgb(0, 0, 0);
 }
 
