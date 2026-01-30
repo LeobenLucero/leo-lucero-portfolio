@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "PlayFairDisplay";
+    src: url("font/PlayfairDisplay-Regular.ttf") format("truetype");
+    font-style: normal;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("font/Montserrat-VariableFont_wght.ttf") format("truetype");
+    font-style: normal;
+}
