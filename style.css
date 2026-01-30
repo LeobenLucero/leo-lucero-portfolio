@@ -1022,6 +1022,15 @@ display: none;
     justify-content: center;
   }
 
+  h1, .highlights{
+    font-size: 35px;
+  }
+
+  h2{
+    font-size: 22px;
+  }
+  
+
   .hamburger {
     display: block;
     position: absolute;

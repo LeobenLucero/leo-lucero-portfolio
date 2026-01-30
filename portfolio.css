@@ -856,6 +856,15 @@ font-size: 25px;
   p {
     font-size: 13px; 
   }
+  h1, .highlights{
+      font-size: 35px;
+    }
+
+    h2{
+      font-size: 22px;
+    }
+  
+
   #top-nav {
     justify-content: center;
   }
