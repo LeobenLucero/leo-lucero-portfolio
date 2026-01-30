@@ -246,8 +246,8 @@ body.fade-out {
 
 .highlights{
   color: #faa206;
-  font-family: "PlayFairDisplay";
-  font-weight: bold;
+  font-family: "Playfair Display", serif;
+    font-weight: bold;
 }
 
 .intro-container {
@@ -1111,6 +1111,7 @@ display: none;
   .content-mid .highlights{
     font-size: 45px;
     line-height: 40px;
+      font-family: "Playfair Display", serif;
   }
 
 

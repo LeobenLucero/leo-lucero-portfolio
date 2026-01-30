@@ -108,6 +108,7 @@ p {
   font-weight: bold;
   font-size: 100px;
   line-height: 70px;
+    font-family: "Playfair Display", serif;
 }
 
 .content-mid h1{
@@ -138,6 +139,7 @@ p {
 .highlights{
   color: #faa206;
   font-weight: bold;
+    font-family: "Playfair Display", serif;
 }
 
 
@@ -933,6 +935,7 @@ font-size: 25px;
   .highlights2{
     font-size: 80px;
     line-height: 60px;
+      font-family: "Playfair Display", serif;
   }
 
   .mkv::before {
