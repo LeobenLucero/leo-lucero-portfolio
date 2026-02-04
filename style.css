@@ -198,6 +198,36 @@ body.fade-out {
   z-index: 10;
 }
 
+.content-left p {
+  opacity: 0;
+  transform: translateX(-120px);
+  animation: slideFromLeft 1s ease-out forwards;
+  animation-delay: 0.6s; /* delay so it follows typing/image */
+}
+
+@keyframes slideFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* SLIDE FROM RIGHT */
+.content-right p {
+  opacity: 0;
+  transform: translateX(120px);
+  animation: slideFromRight 1s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes slideFromRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
 /* CENTER */
 .content-mid {
   display: flex;
@@ -214,6 +244,21 @@ body.fade-out {
   margin-bottom: 20px;
 }
 
+/* TYPING EFFECT FOR H1 */
+.typing-line {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #faa206;
+  padding-right: 6px;
+}
+
+.typing-line.finished {
+  border-right: none;
+}
+
+
+
 .content-mid .image {
   max-width: 100%;
   object-fit: contain;
@@ -228,6 +273,23 @@ body.fade-out {
   object-fit: contain;
 
 }
+.slide-from-bottom {
+  opacity: 0;
+  transform: translateY(200px);
+  animation: slideFromBottom 1.2s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes slideFromBottom {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
 
 /* =======================
    INTRO SECTION
@@ -288,6 +350,22 @@ body.fade-out {
   gap: 20px;
   width: 100%;
 }
+
+.services-1 {
+  opacity: 0;
+  transform: translateY(90px) scale(0.96);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+/* SERVICES – SHOWN */
+.services-1.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 
 .service-link{
   text-decoration: none;
@@ -434,6 +512,41 @@ padding-bottom: 10px;
   align-items: center;     /* horizontal centering */
   text-align: center;
 }
+
+/* WORK ANIMATION */
+/* WORK EXPERIENCE – BASE STATE */
+.work1,
+.work2,
+.work3,
+.work4,
+.work5 {
+  opacity: 0;
+  transform: translateX(0);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+/* FROM LEFT */
+.work-slide-left {
+  transform: translateX(-120px);
+}
+
+/* FROM RIGHT */
+.work-slide-right {
+  transform: translateX(120px);
+}
+
+/* SHOWN */
+.work-show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+
 
  .job-title{
   font-size: 30px;
@@ -605,6 +718,43 @@ display: none;
   transition: all 0.3s ease;
 }
 
+.services-btn-yellow-black {
+  display: inline-block;
+  padding: 15px 70px;
+  background: #faa206;
+  color: #ffffff;
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 999px;
+  border: 1px solid #faa206;
+
+  animation: pulseZoom 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
+/* Pause animation on hover */
+.services-btn-yellow-black:hover {
+  animation-play-state: paused;
+  transform: scale(1.05);
+}
+
+/* KEYFRAMES */
+@keyframes pulseZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
 .services-btn-yellow-black:hover {
   background: #000000;
   border-color: #ffffff;   /* white border */
@@ -648,6 +798,26 @@ display: none;
   display: block;     /* removes bottom gap */
   border-radius: 20px;
 }
+
+/* PORTFOLIO GALLERY – INITIAL STATE */
+.gallery {
+  opacity: 0;
+  transform: translateY(90px) scale(0.96);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+/* WHEN SHOWN */
+.gallery.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+
+
+
 
 .out{
   text-align: center;
@@ -932,7 +1102,6 @@ display: none;
     content: "";
     position: absolute;
     width: 500px;
-    height: 500px;
     background: #faa206;
     border-radius: 50%;
     bottom: -30%;          /* ← hides ~30% of the circle */
@@ -950,8 +1119,8 @@ display: none;
   .hire-left::before {
     content: "";
     position: absolute;
-    width: 800px;
-    height: 800px;
+    width: 750px;
+    height: 750px;
     background: #faa206;
     border-radius: 50%;
     bottom: -60%;          /* ← hides ~30% of the circle */
@@ -1137,6 +1306,18 @@ display: none;
   z-index: 0;
 }
 
+.typing-line {
+    white-space: normal;      /* allow wrapping */
+    max-width: 100%;          /* stay inside screen */
+    word-break: break-word;   /* break safely */
+    text-align: center;
+    border-right: 2px solid #faa206;
+  }
+
+
+
+
+
   /* INTRO */
 .intro {
     padding: 50px 30px 50px;
@@ -1264,6 +1445,32 @@ display: none;
   order: 3;
 }
 
+/* Disable horizontal slide on mobile */
+.work-slide-left,
+.work-slide-right {
+  transform: translateY(40px);
+}
+
+/* When shown */
+.work-show {
+  transform: translateY(0);
+}
+
+/* Slightly faster on mobile */
+.work1,
+.work2,
+.work3,
+.work4,
+.work5 {
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+
+
+
+
 .accent-circle {
   width: 25px;
   height: 25px;
@@ -1291,7 +1498,7 @@ display: none;
 
 .hire-left{
   width: 100%;
-  height: 270px;
+  height: 230px;
 }
 
 .hire-right{

@@ -210,7 +210,7 @@
     <div class="vector-container">
       <div class="vector-title">
         <h1>Design <span class="highlights">Assests</span></h1>
-        <p>TThis section showcases my web design work, focusing on clean visual design, intuitive user experiences, and responsive layouts. Each project is thoughtfully crafted to ensure clarity, usability, and a seamless experience across all devices.
+        <p>This section showcases my web design work, focusing on clean visual design, intuitive user experiences, and responsive layouts. Each project is thoughtfully crafted to ensure clarity, usability, and a seamless experience across all devices.
         </p>
       </div>
 
@@ -296,7 +296,7 @@
     <div class="vector-container">
       <div class="vector-title">
         <h1><span class="highlights">Printed</span> Materials</h1>
-        <p>TThis section showcases my web design work, focusing on clean visual design, intuitive user experiences, and responsive layouts. Each project is thoughtfully crafted to ensure clarity, usability, and a seamless experience across all devices.
+        <p>This section showcases my web design work, focusing on clean visual design, intuitive user experiences, and responsive layouts. Each project is thoughtfully crafted to ensure clarity, usability, and a seamless experience across all devices.
         <br><br>CLICK EACH ITEM TO PREVIEW.
         </p>
       </div>
@@ -520,6 +520,37 @@
   setInterval(slideAssetNext, 2600);
 </script>
 
+<!-- services animation -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const servicesContainer = document.querySelector(".services-container");
+    const serviceItems = document.querySelectorAll(".services-1");
+
+    if (!servicesContainer || serviceItems.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            serviceItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add("show");
+              }, index * 160);
+            });
+
+            obs.disconnect(); // 🔑 prevents repeat
+          }
+        });
+      },
+      {
+        threshold: 0.25
+      }
+    );
+
+    observer.observe(servicesContainer);
+  });
+</script>
 
 
 

@@ -48,11 +48,13 @@
         </p>
     </div>
 
-    <div class="content-mid">
-        <h1>Hello I'm LEO </h1>
-        <h1 ><span class="highlights">Web/Graphic Designer</span></h1>
-        <img src="./img/profil.webp" alt="me" class="image">
-    </div>
+      <div class="content-mid">
+        <h1 class="typing-line" data-text="Hello I'm LEO"></h1>
+        <h1>
+          <span class="highlights typing-line" data-text="Web/Graphic Designer"></span>
+        </h1>
+        <img src="./img/profil.webp" alt="me" class="image slide-from-bottom">
+      </div>
 
     <div class="content-right">
         <p>
@@ -119,7 +121,6 @@
         </div>
         </a>
 
-
       </div>
 
       <div class="services-cta">
@@ -148,6 +149,7 @@
         <div class="work4-right">
           <p><span class="job-title">Web Designer</span></p>
           <p>Designs websites and prepares all required assets, while also creating publication materials for marketing campaigns and events.
+          </p>
         </div>
       </div>
 
@@ -310,12 +312,6 @@
         </div>
       </a>
 
-
-
-
-
-      
-
     </div>
 
     <div class="out">
@@ -403,8 +399,6 @@
 
 
 
-
-
 <script>
   const hamburger = document.getElementById('hamburger');
   const navs = document.querySelectorAll('.nav-links');
@@ -415,6 +409,145 @@
 </script>
 
 <!-- Linking to other pages section -->
+
+
+
+<!-- TYPING H! -->
+ <script>
+  window.addEventListener("load", () => {
+    const lines = document.querySelectorAll(".typing-line");
+    let lineIndex = 0;
+
+    function typeLine() {
+      if (lineIndex >= lines.length) return;
+
+      const el = lines[lineIndex];
+      const text = el.getAttribute("data-text");
+      let charIndex = 0;
+      el.textContent = "";
+
+      function typeChar() {
+        if (charIndex < text.length) {
+          el.textContent += text.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeChar, 90);
+        } else {
+          el.classList.add("finished");
+          lineIndex++;
+          setTimeout(typeLine, 400); // pause before next line
+        }
+      }
+
+      typeChar();
+    }
+
+    typeLine();
+  });
+</script>
+
+
+<!-- services animation -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const servicesContainer = document.querySelector(".services-container");
+    const serviceItems = document.querySelectorAll(".services-1");
+
+    if (!servicesContainer || serviceItems.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            serviceItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add("show");
+              }, index * 160);
+            });
+
+            obs.disconnect(); // 🔑 prevents repeat
+          }
+        });
+      },
+      {
+        threshold: 0.25
+      }
+    );
+
+    observer.observe(servicesContainer);
+  });
+</script>
+
+<!-- WORK SLIDE ANIMATION -->
+ <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const works = document.querySelectorAll(
+      ".work1, .work2, .work3, .work4, .work5"
+    );
+
+    if (!works.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("work-show");
+            obs.unobserve(entry.target); // 🔑 play once
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -80px 0px"
+      }
+    );
+
+    works.forEach((work, index) => {
+      // Alternate direction
+      if (index % 2 === 0) {
+        work.classList.add("work-slide-left");
+      } else {
+        work.classList.add("work-slide-right");
+      }
+
+      observer.observe(work);
+    });
+  });
+</script>
+
+<!-- 
+portfolio animaion slider -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const galleryContainer = document.querySelector(".portfolio-gallery");
+    const galleryItems = document.querySelectorAll(".gallery");
+
+    if (!galleryContainer || !galleryItems.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            galleryItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add("show");
+              }, index * 160); // same stagger as services
+            });
+
+            obs.disconnect(); // 🔑 play once only
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -80px 0px"
+      }
+    );
+
+    observer.observe(galleryContainer);
+  });
+</script>
 
 
 
