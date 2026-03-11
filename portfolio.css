@@ -682,6 +682,24 @@ font-size: 25px;
   opacity: 1;
 }
 
+.animated {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.animated-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.animated-track img {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+}
 
 
 
@@ -721,6 +739,7 @@ font-size: 25px;
   .vector-title p{
     padding: 0 200px;
   }
+
 
 
 }
@@ -798,12 +817,30 @@ font-size: 25px;
   .marketing-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .animated-track {
+    gap: 40px;
+  }
+  .animated-track img {
+    width: 150px;
+  }
+
+  
 
 
 }
 
+
 /* Large desktops */
 @media (min-width: 1400px) {
+  .animated-track {
+  gap: 20px;
+  padding-bottom: 20px;
+  margin-top: -50px;
+}
+
+.animated-track img {
+  width: 220px;
+}
   .mkv {
     padding: 140px 160px 0 160px;
   }
@@ -848,11 +885,28 @@ font-size: 25px;
 
 
 
+
+
 /* =======================
    RESPONSIVE – MOBILE-----------------------------------------------
 ======================= */
 @media (max-width: 768px) {
   /* NAVBAR */
+  .animated {
+  margin-top: 30px;
+}
+
+.asset-slider{
+  height: 200px;
+}
+
+.animated-track {
+  gap: 10px;
+}
+
+.animated-track img {
+  width: 150px;
+}
   p {
     font-size: 13px; 
   }
