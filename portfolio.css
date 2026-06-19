@@ -528,7 +528,7 @@ font-size: 25px;
   box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25);
 }
 
-@keyframes singleJump {
+/* @keyframes singleJump {
   0% {
     transform: translateY(0);
   }
@@ -541,7 +541,7 @@ font-size: 25px;
   100% {
     transform: translateY(0);
   }
-}
+} */
 
 .marketing-top,
 .marketing-card {
