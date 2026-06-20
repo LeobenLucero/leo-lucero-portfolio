@@ -501,7 +501,7 @@ font-size: 25px;
 /* GRID */
 .marketing-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 2fr);
   gap: 24px;
   width: 100%;
 }
@@ -511,7 +511,7 @@ font-size: 25px;
   border-radius: 22px;
   overflow: hidden;
   background: #fff;
-  /* box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18); */
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.18);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -633,12 +633,12 @@ font-size: 25px;
 /* Floating card */
 .pdf-preview {
   position: relative;
-  height: 260px; /* ensures consistent card height */
+  height: 500px; /* ensures consistent card height */
   border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
   background: #fff;
-  height: 100%;
+  /* height: 100%; */
 
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.12),
@@ -660,8 +660,9 @@ font-size: 25px;
 /* Image preview */
 .pdf-preview img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: cover; /* fills the container */
+  object-position: top; /* shows the top of the PDF page */
 }
 
 /* Hover overlay */
@@ -699,6 +700,28 @@ font-size: 25px;
   width: 180px;
   height: auto;
   object-fit: contain;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-top: 30px;
+}
+
+.video-wrapper2 {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Square */
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.video-wrapper2 iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 
@@ -895,6 +918,10 @@ font-size: 25px;
   .animated {
   margin-top: 30px;
 }
+
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
 .asset-slider{
   height: 200px;
