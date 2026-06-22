@@ -76,6 +76,8 @@ p {
 .banner-track {
   display: flex;
   width: max-content;
+  padding: 30px;
+
 }
 
 .banner-slide {
@@ -125,6 +127,12 @@ p {
 .top-title {
   text-align: center;
   padding-bottom: 30px;
+}
+
+.dashed-line {
+  border: none;
+  border-top: 2px dashed #ccc;
+  margin: 40px 0;
 }
 
 
@@ -698,7 +706,7 @@ p {
 /* Floating card */
 .pdf-preview {
   position: relative;
-  height: 500px;
+  height: auto;
   /* ensures consistent card height */
   border-radius: 12px;
   overflow: hidden;
@@ -1384,10 +1392,11 @@ p {
 
   .pdf-grid {
     grid-template-columns: 1fr;
+
   }
 
   .pdf-preview {
-    height: 220px;
+    height: auto;
   }
 
   .services-btn-yellow {
