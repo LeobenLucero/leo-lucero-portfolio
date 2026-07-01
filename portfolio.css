@@ -699,6 +699,14 @@ p {
   gap: 24px;
 }
 
+.packaging-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
 /* Floating card */
 .pdf-preview {
   position: relative;
@@ -1388,7 +1396,9 @@ p {
 
   .pdf-grid {
     grid-template-columns: 1fr;
-
+  }
+    .packaging-grid {
+    grid-template-columns: 1fr;
   }
 
   .pdf-preview {
@@ -1590,6 +1600,11 @@ p {
   }
 
   .pdf-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 30px;
+  }
+  
+  .packaging-grid {
     grid-template-columns: repeat(2, 1fr);
     padding-bottom: 30px;
   }
